@@ -1,0 +1,6 @@
+# -- General Info --------------------------------------------------------------
+host    : localhost
+port    : 1337
+timezone: Europe/Amsterdam
+timeout : 6000
+

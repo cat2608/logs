@@ -1,0 +1,25 @@
+{
+  "name": "logs",
+  "version": "1.0.0",
+  "description": "Parsing log file",
+  "main": "zen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cat2608/logs.git"
+  },
+  "author": "Catalina <cat2608@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cat2608/logs/issues"
+  },
+  "homepage": "https://github.com/cat2608/logs",
+  "dependencies": {
+    "zenserver": "^1.7.9"
+  },
+  "devDependencies": {
+    "zenrequest": "^0.10.30"
+  }
+}
