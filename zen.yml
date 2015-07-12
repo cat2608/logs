@@ -4,3 +4,7 @@ environment: development
 # -- RESTful services ----------------------------------------------------------
 api:
   - log
+
+# -- session -------------------------------------------------------------------
+session:
+  authorization: auth
