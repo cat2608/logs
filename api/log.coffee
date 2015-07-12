@@ -17,6 +17,8 @@ module.exports = (server) ->
   server.get "/api/logs/stats", (request, response) ->
     tasks = []
     tasks.push Stats.average
+    tasks.push Stats.median
     Hope.join(tasks).then (error, results) ->
       response.json
         average: results[0]
+        median : results[1]
