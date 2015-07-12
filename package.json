@@ -2,17 +2,7 @@
   "name"        : "parse-logs",
   "version"     : "1.0.0",
   "description" : "Parsing log file",
-  "main"        : "zen.js",
-  },
-  "repository": {
-    "type": "git",
-    "url" : "https://github.com/cat2608/parse-logs.git"
-  },
-  "author": "Catalina <cat2608@gmail.com>",
-  "bugs"  : {
-    "url": "https://github.com/cat2608/parse-logs/issues"
-  },
-  "homepage"    : "https://github.com/cat2608/parse-logs",
+  "author"      : "Catalina <cat2608@gmail.com>",
   "dependencies": {
     "zenserver": "^1.7.9"
   },
