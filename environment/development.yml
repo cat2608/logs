@@ -4,3 +4,7 @@ port    : 1337
 timezone: Europe/Amsterdam
 timeout : 6000
 
+# -- Databases -----------------------------------------------------------------
+redis:
+  host      : 127.0.0.1
+  port      : 6379

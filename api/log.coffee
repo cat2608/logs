@@ -6,8 +6,11 @@ Requests  = require "../lib/get_requests"
 module.exports = (server) ->
 
   server.get "/api/logs/total_requests", (request, response) ->
-    Requests.count request.parameters.user_id, (error, result) ->
-      response.ok()
+    Requests.count(request.parameters.user_id).then (error, result) ->
+      if error
+        response.badRequest()
+      else
+        response.json result
 
 
 

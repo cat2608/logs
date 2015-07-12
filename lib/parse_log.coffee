@@ -1,9 +1,11 @@
 "use strict"
 
 Hope    = require("zenserver").Hope
+Redis   = require("zenserver").Redis
 fs      = require "fs"
 path    = require "path"
 folder  = "#{__dirname}/../"
+C       = require "../common/constants"
 
 Parse =
   logs: (file) ->
@@ -33,7 +35,10 @@ Parse =
     promise
 
 __writeLog = (requests) ->
-  file_name = path.join folder, "logs/server.json"
-  fs.writeFile file_name, JSON.stringify(requests, null, 0)
+  for log in requests
+    Redis.run "RPUSH", "path", log.path
+
+  file_name = path.join folder, C.FILE.LOGS
+  fs.writeFile file_name, JSON.stringify requests
 
 module.exports = Parse
