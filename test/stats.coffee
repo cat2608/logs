@@ -10,7 +10,8 @@ module.exports = ->
 
 # -- Tasks ---------------------------------------------------------------------
 _getStats = -> ->
-  Test "GET", "api/logs/stats", null, _auth(), "Get stats", 200
+  Test "GET", "api/logs/stats", null, _auth(), "Get stats", 200, (response) ->
+    console.log response
 
 # -- Private methods -----------------------------------------------------------
 _auth = ->

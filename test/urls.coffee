@@ -10,7 +10,8 @@ module.exports = ->
 
 # -- Tasks ---------------------------------------------------------------------
 _getTotalRquest = -> ->
-  Test "GET", "api/logs/total_requests", null, _auth(), "Get total requests per URL", 200
+  Test "GET", "api/logs/total_requests", null, _auth(), "Get total requests per URL", 200, (response) ->
+    console.log response
 
 # -- Private methods -----------------------------------------------------------
 _auth = ->
