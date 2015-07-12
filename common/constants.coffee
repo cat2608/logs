@@ -1,9 +1,6 @@
 "use stric"
 
 module.exports =
-  FILE:
-    LOGS: "server.json"
-
   URL:
     PENDING_MESSAGES  : "/api/users/{user_id}/count_pending_messages"
     GET_MESSAGES      : "/api/users/{user_id}/get_messages"
