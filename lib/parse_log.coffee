@@ -42,6 +42,7 @@ __writeLog = (requests) ->
     Redis.run "RPUSH", "path", log.path
     sum = parseInt(log.connect.slice(0, -2)) + parseInt(log.service.slice(0, -2))
     Redis.run "LPUSH", "median", sum
+    Redis.run "LPUSH", "dyno", log.dyno
 
   Redis.run "SET", "average", (sum / requests.length)
 

@@ -19,8 +19,10 @@ module.exports = (server) ->
     tasks.push Stats.average
     tasks.push Stats.median
     tasks.push Stats.mode
+    tasks.push Stats.dyno
     Hope.join(tasks).then (error, results) ->
       response.json
         average: results[0]
         median : results[1]
         mode   : results[2]
+        dyno   : results[3]
