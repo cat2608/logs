@@ -5,12 +5,12 @@ Test = require("zenrequest").Test
 module.exports = ->
 
   tasks = []
-  tasks.push _getTotalRquest()
+  tasks.push _getMedian()
   tasks
 
 # -- Tasks ---------------------------------------------------------------------
-_getTotalRquest = -> ->
-  Test "GET", "api/logs/total_requests", null, _auth(), "Get total requests per URL", 200
+_getMedian = -> ->
+  Test "GET", "api/logs/stats", null, _auth(), "Get median", 200
 
 # -- Private methods -----------------------------------------------------------
 _auth = ->

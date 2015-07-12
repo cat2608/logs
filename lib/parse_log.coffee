@@ -38,6 +38,11 @@ Parse =
     promise
 
 __writeLog = (requests) ->
-  Redis.run "RPUSH", "path", log.path for log in requests
+  for log in requests
+    Redis.run "RPUSH", "path", log.path
+    sum = parseInt(log.connect.slice(0, -2)) + parseInt(log.service.slice(0, -2))
+    Redis.run "LPUSH", "median", sum
+
+  Redis.run "SET", "average", (sum / requests.length)
 
 module.exports = Parse

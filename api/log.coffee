@@ -1,7 +1,9 @@
 "use strict"
 
+Hope      = require("zenserver").Hope
 Parse     = require("../lib/parse_log").logs("server.log")
 Requests  = require "../lib/get_requests"
+Stats     = require "../lib/stats"
 
 module.exports = (server) ->
 
@@ -12,5 +14,9 @@ module.exports = (server) ->
       else
         response.json result
 
-
-
+  server.get "/api/logs/stats", (request, response) ->
+    tasks = []
+    tasks.push Stats.average
+    Hope.join(tasks).then (error, results) ->
+      response.json
+        average: results[0]
